@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Flocking simulation with HTML5 canvas | Sycora</title>
+		<meta charset="utf-8">
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+        <link href="ui.css" rel="stylesheet" type="text/css" />
+		<script src="http://www.google.com/jsapi?key=ABQIAAAAiCYeNTsWbq29lPD8QnzUBRT7kkZsVpsQNgOk-CQZDOnF0umpmxQ20stX7FSXDg0O17gbQqwWBm9yGg" type="text/javascript"></script>
+		<script type="text/javascript">
+			google.load('jquery', '1.4.2');
+			google.load('jqueryui', '1.8.4');
+		</script>
+		<script src="flock.js" type="text/javascript"></script>
+		<script src="ui.js" type="text/javascript"></script>
+	</head>
+	<body>
+        <div id="page">
+            <h1>Flocking simulation with HTML5 canvas</h1>
+            <canvas height="490" id="canvas" width="690">
+                <h2>Oh no!</h2>
+                <p>Your browser doesn't support the &lt;canvas&gt; tag. Sucks to be you. Why not <a href="http://www.browserchoice.eu/">get a new one</a>?</p>
+            </canvas>
+            <section class="options">
+                <section>
+                    <h2>General</h2>
+                    <label for="numBoids"># boids: <span id="numBoidsValue">30</span></label>
+                    <div class="slider" id="numBoids"></div>
+                    <label for="numBoids">Frame rate: <span id="frameRateValue">60</span></label>
+                    <div class="slider" id="frameRate"></div>
+                </section>
+                <section>
+                    <h2>Behaviour</h2>
+                    <label for="separationDistance">Separation distance: <span id="separationDistanceValue">20</span></label>
+                    <div class="slider" id="separationDistance"></div>
+                    <label for="separationPriority">Separation priority: <span id="separationPriorityValue">5</span></label>
+                    <div class="slider" id="separationPriority"></div>
+                    <label for="alignmentPriority">Alignment priority: <span id="alignmentPriorityValue">2</span></label>
+                    <div class="slider" id="alignmentPriority"></div>
+                    <label for="cohesionPriority">Cohesion priority: <span id="cohesionPriorityValue">1</span></label>
+                    <div class="slider" id="cohesionPriority"></div>
+                    <label for="targetPriority">Target priority: <span id="targetPriorityValue">3</span></label>
+                    <div class="slider" id="targetPriority"></div>
+                </section>
+                <section>
+                    <h2>Eyesight</h2>
+                    <label for="visualRange">Visual range: <span id="visualRangeValue">50</span></label>
+                    <div class="slider" id="visualRange"></div>
+                    <label for="visualField">Visual field: <span id="visualFieldValue">270°</span></label>
+                    <div class="slider" id="visualField"></div>
+                </section>
+                <section>
+                    <p>For a description of these settings, see <a href="http://www.red3d.com/cwr/boids/">Craig Reynolds' original article</a> and <a href="http://vimeo.com/13481264">Rob Hawkes' boids video</a>.</p>
+                </section>
+            </section>
+            <section class="actions"><a href="http://twitter.com/richardpoole" id="twitter">Follow me on Twitter</a></section>
+        </div>
+	</body>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-11124903-1");
+            pageTracker._trackPageview();
+        }
+        catch(err) {}
+    </script>
+</html>
