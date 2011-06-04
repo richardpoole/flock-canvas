@@ -5,8 +5,7 @@ $(document).ready(function() {
 	var canvas = document.getElementById('canvas');
     var controller = new FlockController(canvas);
 
-
-    canvas.mousemove(function(e) {
+    canvas.addEventListener('mousemove', function(e) {
         var offsetX = e.offsetX;
         var offsetY = e.offsetY;
         if (!offsetX || !offsetY) {
@@ -15,9 +14,7 @@ $(document).ready(function() {
         }
 
         controller.setTarget(offsetX, offsetY);
-    }).mouseout(function() {
-        alert('test');
-    });
+    }, false);
 
     $('#numBoids').slider({
         range: 'min',
