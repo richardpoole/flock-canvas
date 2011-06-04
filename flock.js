@@ -20,6 +20,7 @@ function FlockController(canvas, options) {
 		separationDistance: 20,
 		separationPriority: 5,
 		targetPriority: 3,
+    torus: true,
 		visualField: Math.PI * 270 / 180,
 		visualRange: 50,
 	};
@@ -103,6 +104,23 @@ function FlockController(canvas, options) {
 		// Move the boids in a flocky way.
 		for (i in boids) {
 			var boid = boids[i];
+
+      if (settings.torus) {
+        // Make canvas a torus
+        if (boid.x < 0) {
+          boid.x += canvas.width;
+        }
+        if (boid.x > canvas.width) {
+          boid.x -= canvas.width;
+        }
+        if (boid.y < 0) {
+          boid.y += canvas.height;
+        }
+        if (boid.y > canvas.height) {
+          boid.y -= canvas.height;
+        }
+      }
+
 			var avg = getVisualStats(boid);
 			var tx = boid.vx;
 			var ty = boid.vy;

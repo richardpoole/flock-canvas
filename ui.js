@@ -96,6 +96,14 @@ $(document).ready(function() {
         step: 90,
         slide: function(e, ui) { $('#visualFieldValue').text(ui.value + '°'); controller.updateOptions({visualField: ui.value}); }
     });
+
+    $('#torus').click(function() {
+        if ($(this).attr("checked")) {
+            controller.updateOptions({torus: true});
+        } else {
+            controller.updateOptions({torus: false});
+        }
+    });
     
     $('#twitter').button();
 });
